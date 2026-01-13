@@ -5,8 +5,8 @@ Experimental, independent re-implementation of a knot-type-aware variational aut
 ## Status
 This repository contains a runnable research prototype of a variational autoencoder with a knot
 classifier acting on the latent space. The code has been partially tested on a small dataset of
-knotted coarse-grained polymers generated via molecular dynamics simulations (included in the
-repository) and qualitatively reproduces the results reported in:
+knotted coarse-grained polymers generated via molecular dynamics simulations and qualitatively 
+reproduces the results reported in:
 
 https://journals.aps.org/pre/abstract/10.1103/mdpw-lvcy
 
@@ -23,10 +23,13 @@ The code was written from scratch based on the published paper and does not reus
 implementation.
 
 ## Description
-The code implements a variational autoencoder with a transformer- and convolution-based encoder
-and a decoder composed of transposed convolutional layers. The VAE learns a latent representation
-of knotted polymer configurations while organizing the latent space according to knot type through
-an MLP classifier acting directly on the latent embeddings and contributing to the loss function.
+The code implements a variational autoencoder with a transformer- and convolution-based encoder 
+and a decoder composed of transposed convolutional layers. The VAE takes as input a file containing 
+flattened 3D coordinates of knotted polymer configurations expressed in the center-of-mass frame, 
+along with a corresponding file of integer labels representing the knot types. It learns a latent 
+representation of the polymer configurations while organizing the latent space according to knot 
+type through an MLP classifier acting directly on the latent embeddings and contributing to the 
+loss function.
 
 The code can also be run in evaluation mode to encode and decode a set of configurations after
 training.

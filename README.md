@@ -38,11 +38,13 @@ and a corresponding labels file.
 The code can be executed in two modes.
 
 - Training mode
+
 python3 VAEC_knots.py train training_confs.dat training_labels.dat
 
 This mode trains the variational autoencoder.
 
 - Evaluation mode
+
 python3 VAEC_knots.py eval training_confs.dat training_labels.dat
 
 This mode loads a trained model and encodes/decodes the configurations contained in the input
